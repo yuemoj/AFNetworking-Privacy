@@ -53,13 +53,6 @@
 			remoteGlobalIDString = 291BFDC41BB9E85500FFB029;
 			remoteInfo = "watchOS Example Extension";
 		};
-		291BFDD31BB9E85500FFB029 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 29E6F16B1BB9DA2E00A4466C /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 291BFDB81BB9E85400FFB029;
-			remoteInfo = "watchOS Example";
-		};
 		29E6F1F21BB9E37200A4466C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 29E6F16B1BB9DA2E00A4466C /* Project object */;
@@ -470,7 +463,6 @@
 			);
 			dependencies = (
 				29E6F1F31BB9E37200A4466C /* PBXTargetDependency */,
-				291BFDD41BB9E85500FFB029 /* PBXTargetDependency */,
 			);
 			name = "iOS Example";
 			productName = "iOS Example";
@@ -660,11 +652,6 @@
 			isa = PBXTargetDependency;
 			target = 291BFDC41BB9E85500FFB029 /* watchOS Example Extension */;
 			targetProxy = 291BFDC71BB9E85500FFB029 /* PBXContainerItemProxy */;
-		};
-		291BFDD41BB9E85500FFB029 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 291BFDB81BB9E85400FFB029 /* watchOS Example */;
-			targetProxy = 291BFDD31BB9E85500FFB029 /* PBXContainerItemProxy */;
 		};
 		29E6F1F31BB9E37200A4466C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
