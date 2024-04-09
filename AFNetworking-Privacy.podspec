@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name     = 'AFNetworking-Privacy'
-  s.version  = '0.0.1'
+  s.version  = '0.0.2'
   s.license  = 'MIT'
   s.summary  = 'A delightful networking framework for Apple platforms.'
   s.homepage = 'https://github.com/yuemoj/AFNetworking-Privacy.git'
@@ -8,21 +8,23 @@ Pod::Spec.new do |s|
   s.author   = { "yuemoj" => "yj_745@163.com" }
   s.source   = { :git => 'https://github.com/yuemoj/AFNetworking-Privacy.git', :tag => s.version }
 
+  s.platform = :ios
   s.ios.deployment_target = '9.0'
   # s.osx.deployment_target = '10.10'
   # s.watchos.deployment_target = '2.0'
   # s.tvos.deployment_target = '9.0'
 
-  s.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=macosx*]' => 'arm64' }
-  s.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=macosx*]' => 'arm64' }
+  # s.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=macosx*]' => 'arm64' }
+  # s.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=macosx*]' => 'arm64' }
   s.ios.pod_target_xcconfig = { 'PRODUCT_BUNDLE_IDENTIFIER' => 'com.alamofire.AFNetworking' }
   # s.osx.pod_target_xcconfig = { 'PRODUCT_BUNDLE_IDENTIFIER' => 'com.alamofire.AFNetworking' }
   # s.watchos.pod_target_xcconfig = { 'PRODUCT_BUNDLE_IDENTIFIER' => 'com.alamofire.AFNetworking-watchOS' }
   # s.tvos.pod_target_xcconfig = { 'PRODUCT_BUNDLE_IDENTIFIER' => 'com.alamofire.AFNetworking' }
 
   s.source_files = 'AFNetworking/AFNetworking.h'
-  s.resource_bundles = {'AFNetworking-Privacy' => ['AFNetworking/PrivacyInfo.xcprivacy']}
-
+  s.resource_bundles = {
+    'AFNetworking-Privacy' => ['AFNetworking/PrivacyInfo.xcprivacy']
+  }  
   s.subspec 'Serialization' do |ss|
     ss.source_files = 'AFNetworking/AFURL{Request,Response}Serialization.{h,m}'
   end
