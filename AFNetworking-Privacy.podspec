@@ -24,7 +24,7 @@ Pod::Spec.new do |s|
 
   s.source_files = 'AFNetworking/AFNetworking.h'
   s.resource_bundles = {
-    'AFNetworking-Privacy' => ['AFNetworking/PrivacyInfo.xcprivacy', 'Framework/Info.plist']
+    'AFNetworking-Privacy' => ['AFNetworking/PrivacyInfo.xcprivacy', 'Package.swift']
   }  
   s.subspec 'Serialization' do |ss|
     ss.source_files = 'AFNetworking/AFURL{Request,Response}Serialization.{h,m}'
