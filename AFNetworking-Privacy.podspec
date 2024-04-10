@@ -5,8 +5,9 @@ Pod::Spec.new do |s|
   s.summary  = 'A delightful networking framework for Apple platforms.'
   s.homepage = 'https://github.com/yuemoj/AFNetworking-Privacy.git'
   # s.social_media_url = 'https://twitter.com/AFNetworking'
-  s.author   = { "yuemoj" => "yj_745@163.com" }
-  s.source   = { :git => 'https://github.com/yuemoj/AFNetworking-Privacy.git', :tag => s.version }
+  s.author   = { "yuemoj" => "yj_745@163.com" 
+  # s.source   = { :git => 'https://github.com/yuemoj/AFNetworking-Privacy.git', :tag => s.version }}
+  s.source   = { :git => 'https://github.com/yuemoj/AFNetworking-Privacy.git', :branch => 'master' }
 
   s.platform = :ios
   s.ios.deployment_target = '9.0'
@@ -23,7 +24,7 @@ Pod::Spec.new do |s|
 
   s.source_files = 'AFNetworking/AFNetworking.h'
   s.resource_bundles = {
-    'AFNetworking-Privacy' => ['AFNetworking/PrivacyInfo.xcprivacy'],
+    'AFNetworking-Privacy' => 'AFNetworking/PrivacyInfo.xcprivacy'
   }  
   s.subspec 'Serialization' do |ss|
     ss.source_files = 'AFNetworking/AFURL{Request,Response}Serialization.{h,m}'
