@@ -512,5 +512,8 @@ FOUNDATION_EXPORT NSString * const AFNetworkingTaskDidCompleteErrorKey;
  The session task metrics taken from the download task. Included in the userInfo dictionary of the `AFNetworkingTaskDidCompleteSessionTaskMetrics`
  */
 FOUNDATION_EXPORT NSString * const AFNetworkingTaskDidCompleteSessionTaskMetrics;
-
+/**
+ The key in the `HTTPHeaderField` dictionary used for the Request, with the value being the domain name. This is used in scenarios where direct IP connection is employed, and when handling certificate challenges, the set domain name is used to replace the IP address.
+ */
+FOUNDATION_EXPORT NSString * const AFNetworkingChallengeHostKey;
 NS_ASSUME_NONNULL_END

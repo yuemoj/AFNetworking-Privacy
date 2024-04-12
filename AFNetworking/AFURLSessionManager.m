@@ -56,6 +56,8 @@ NSString * const AFNetworkingTaskDidCompleteErrorKey = @"com.alamofire.networkin
 NSString * const AFNetworkingTaskDidCompleteAssetPathKey = @"com.alamofire.networking.task.complete.assetpath";
 NSString * const AFNetworkingTaskDidCompleteSessionTaskMetrics = @"com.alamofire.networking.complete.sessiontaskmetrics";
 
+NSString * const AFNetworkingChallengeHostKey = @"com.almofire.networking.challenge.host";
+
 static NSString * const AFURLSessionManagerLockName = @"com.alamofire.networking.session.manager.lock";
 
 typedef void (^AFURLSessionDidBecomeInvalidBlock)(NSURLSession *session, NSError *error);
@@ -990,7 +992,8 @@ didReceiveChallenge:(NSURLAuthenticationChallenge *)challenge
     }
 
     if (evaluateServerTrust) {
-        if ([self.securityPolicy evaluateServerTrust:challenge.protectionSpace.serverTrust forDomain:challenge.protectionSpace.host]) {
+        NSString *domain = task.currentRequest.allHTTPHeaderFields[AFNetworkingChallengeHostKey] ?: challenge.protectionSpace.host;
+        if ([self.securityPolicy evaluateServerTrust:challenge.protectionSpace.serverTrust forDomain:domain/*challenge.protectionSpace.host*/]) {
             disposition = NSURLSessionAuthChallengeUseCredential;
             credential = [NSURLCredential credentialForTrust:challenge.protectionSpace.serverTrust];
         } else {
@@ -1272,3 +1275,4 @@ expectedTotalBytes:(int64_t)expectedTotalBytes
 }
 
 @end
+
